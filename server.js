@@ -1,12 +1,18 @@
 // Dependencies
 const express = require("express");
-const path = require("path");
 const apiroutes = require("./routes/apiroutes.js")
+const htmlroutes = require("./routes/htmlroutes.js")
 
 // // Set our port to 8080
 var app = express();
 var PORT = 8080;
+
+app.use(express.static("public"))
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 apiroutes(app)
+htmlroutes(app)
 
 // // Create our server
 // var server = http.createServer(handleRequest);
@@ -25,7 +31,7 @@ apiroutes(app)
 // }
 
 // // Starts our server
-server.listen(PORT, function() {
+app.listen(PORT, function() {
   console.log("Server is listening on PORT: " + PORT);
 });
 
