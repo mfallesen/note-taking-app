@@ -5,7 +5,7 @@ const htmlroutes = require("./routes/htmlroutes.js")
 
 // // Set our port to 8080
 var app = express();
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"))
 app.use(express.urlencoded({ extended: true }));
