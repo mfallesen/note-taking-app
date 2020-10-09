@@ -3,7 +3,7 @@ Everyone needs to keep notes every once in a while. And a 21century problem call
 
 ## How to use:
 
-Using this is simple simply navigate to (insert link here) and start taking notes!
+Using this is simple simply navigate to (https://vast-basin-99556.herokuapp.com/) and start taking notes!
 
 ![Title Screen](/public/assets/images/indexhtml.gif)
 
