@@ -27,12 +27,12 @@ function apiRoutes(app) {
 
     app.delete("/api/notes/:id", function(req, res){
         const removeNote = req.params.id;
-
+        console.log(req.params.id);
         db.pop(removeNote);
-
+        console.log(removeNote);
         fs.writeFile("../db/db.json", JSON.stringify(db), function(err) {
         })
-        
+        res.send("DELETE request called")
         
     })
 }
