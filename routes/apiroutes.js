@@ -17,9 +17,7 @@ function apiRoutes(app) {
         const newNote = req.body;
         let noteId = newNote.title + " " + (Math.floor(Math.random()*10))
         newNote.id = noteId;
-        console.log(noteId);
         db.push(newNote)
-        console.log(newNote);
         fs.writeFile("../db/db.json", JSON.stringify(db), function(err) {
             res.json(db);
             console.log(db);
@@ -27,14 +25,14 @@ function apiRoutes(app) {
         
     })
 
-    app.delete("api/notes/:id", function(req, res){
-        const removeNote = req.body.id;
-        console.log(req.body.id);
+    app.delete("/api/notes/:id", function(req, res){
+        const removeNote = req.params.id;
+
         db.pop(removeNote);
-        console.log(removeNote);
+
         fs.writeFile("../db/db.json", JSON.stringify(db), function(err) {
-            res.json(db);
         })
+        
         
     })
 }
